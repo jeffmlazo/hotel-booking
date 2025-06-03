@@ -8,6 +8,13 @@ export const RoomSchema = object({
   amenities: array(string()).nonempty("At least one amenity must be provided"),
 });
 
+export const ReserveSchema = object({
+  name: string().min(1, "Room name have at least 1 character"),
+  phone: string()
+    .min(10, "Phone number have at least 10 numbers")
+    .regex(/^[0-9]+$/, "Only numbers are allowed"),
+});
+
 export const ContactSchema = object({
   name: string().min(6, "Name have at least 6 characters"),
   email: string()
