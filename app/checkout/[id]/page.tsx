@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import CheckoutDetail from "@/components/CheckoutDetail";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Reservation Summary",
@@ -15,6 +16,7 @@ const CheckoutPage = async ({params}: {params: Promise<{id: string}>}) => {
             <Suspense fallback={<p>Loading...</p>}>
               <CheckoutDetail reservationId={reservationId}/>
             </Suspense>
+            <Script src="https://app.midtrans.com/snap/snap.js" data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY} strategy="lazyOnload"/>
         </div>
     </>
   );
