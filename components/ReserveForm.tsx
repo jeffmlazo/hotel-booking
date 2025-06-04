@@ -13,10 +13,10 @@ const ReserveForm = ({room}: {room: RoomDetailProps}) => {
     const [startDate, setStartDate] = useState(startNewDate);
     const [endDate, setEndDate] = useState(endNewDate);
 
-    const handleDateChange = (dates: [Date | null, Date | null] | null) => {
-        const [start, end] = dates || [null, null];
-        if(start) setStartDate(start);
-        if(end) setEndDate(end);
+    const handleDateChange = (dates: any) => {
+        const [start, end] = dates;
+        setStartDate(start);
+        setEndDate(end);
     };
 
     const [state, formAction, isPending] = useActionState(createReserve.bind(null, room.id, room.price, startDate, endDate), null);
@@ -27,11 +27,12 @@ const ReserveForm = ({room}: {room: RoomDetailProps}) => {
                 <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-gray-900">Arrival - Departure</label>
                     <DatePicker
+                    isClearable={true}
+                    selectsRange={true}
                     selected={startDate}
                     startDate={startDate}
                     endDate={endDate}
                     minDate={new Date()}
-                    selectsRange={true}
                     onChange={handleDateChange}
                     dateFormat={"dd-MM-YYYY"}
                     wrapperClassName="w-full"
