@@ -14,26 +14,22 @@
   node_bundler = "esbuild"
   external_node_modules = ["@prisma/client", "prisma"]
 
-# Handle API routes
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-
-# Handle Next.js routing
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/:splat"
-  status = 200
+  from = "http://projex-hotel-booking.netlify.app/*"
+  to = "https://projex-hotel-booking.netlify.app/:splat"
+  status = 301
   force = true
-  conditions = {Scheme = "http"}
 
-  [[headers]]
+[[headers]]
   for = "/*"
   [headers.values]
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
