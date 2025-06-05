@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
             value: "http",
           },
         ],
-        destination: "https://projex-hotel-booking.netlify.app/:path*",
+        destination: "https://projex-hotel-booking-two.netlify.app/:path*",
         permanent: true,
       },
     ];
