@@ -6,7 +6,7 @@
 
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-1.0.x"] // For Netlify's Linux env
+  binaryTargets = ["native", "rhel-openssl-1.0.x", "linux-musl"] // For Netlify's Linux env
   // Commented out this line to fix the Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
   // output   = "../app/generated/prisma"
 }

@@ -12,6 +12,7 @@
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["@prisma/client", "prisma"]
 
 # Handle API routes
 [[redirects]]
