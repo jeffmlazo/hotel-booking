@@ -5,6 +5,7 @@ import { type Adapter } from "next-auth/adapters";
 import Google from "next-auth/providers/google";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  // trustHost: true, // For development only. Commented this out if you are in production
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [Google],
   session: { strategy: "jwt" },

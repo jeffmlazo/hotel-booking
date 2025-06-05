@@ -1,12 +1,26 @@
 [build]
-  command = "npm run build"
   publish = ".next"
+  command = "npm run build"
 
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--version" # Ensure npm is available
+
+# Essential for Next.js API routes
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[build.environment]
-  NODE_VERSION = "18" # Node 16+ required for Prisma
+[functions]
+  node_bundler = "esbuild"
 
-[build.rollupOptions]
-  external = ["tailwindcss"]
+# Handle API routes
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
+
+# Handle Next.js routing
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
