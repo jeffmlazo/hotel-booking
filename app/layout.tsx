@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-// import { Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import "./globals.css";
 
-// const raleway = Raleway({
-//   variable: "--font-raleway",
-//   subsets: ["latin"],
-// });
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Book Your Luxury Room",
@@ -27,8 +27,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
         <SessionProvider session={session}>
-          {/* <body className={`${raleway.variable} antialiased`}> */}
-          <body className="antialiased">
+          <body className={`${raleway.variable} antialiased`}>
             <Navbar />
             <main className="bg-gray-50 min-h-screen">{children}</main>
             <Footer />
