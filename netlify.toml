@@ -1,7 +1,8 @@
 [build]
-  command = "npm install && npm run build"
+  command = "npm install && npx prisma generate && npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "22.12.0"
   NPM_FLAGS = "--legacy-peer-deps"
+  PRISMA_SKIP_POSTINSTALL_GENERATE = "false"  # Ensures Prisma generates
