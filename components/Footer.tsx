@@ -8,16 +8,16 @@ const Footer = () => {
             <div className="grid md:grid-cols-3 gap-7">
                 <div>
                     <Link href="/" className="mb-10 block">
-                        <Image src="/images/logo-light.png" width={128} height={49} alt="logo" />
+                        <Image src="/images/hotel-booking-logo-light.png" width={256} height={98} alt="Logo Light" />
                     </Link>
                     <p className="text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vitae cupiditate fugiat asperiores, quo estg.
+                        Welcome to Hotel Booking, your trusted partner in finding the perfect stay wherever your travels take you. We’re dedicated to making hotel bookings seamless, affordable, and enjoyable, ensuring every trip is memorable.
                     </p>
                 </div>
                 <div>
                     <div className="flex gap-20">
                         <div className="flex-1 md:flex-none">
-                            <h4 className="mb-8 text-xl font-semibold text-white">Links</h4>
+                            <h4 className="mb-8 text-xl font-semibold text-white">Company</h4>
                             <ul className="list-item space-y-5 text-gray-400">
                                 <li>
                                     <Link href="/">Home</Link>
@@ -55,9 +55,9 @@ const Footer = () => {
                 <div>
                     <h4 className="mb-8 text-xl font-semibold text-white">Newsletter</h4>
                     <p className="text-gray-400">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing.
+                        Sign up for our latest news, events, and product updates delivered directly to your inbox. You can unsubscribe at any time.
                     </p>
-                    <form action="" className="mt-5">
+                    <form action="#" className="mt-5">
                         <div className="mb-5">
                             <input type="text" name="email" id="eamil" className="w-full p-3 rounded-sm bg-white" placeholder="johndoe@gmail.com" />
                         </div>
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="max-w-screen-xl mx-auto px-4 border-t border-gray-500 py-8 text-center text-base text-gray-500">
-            &copy; Copyright 2025 | Company Name | All Rights Reserved
+            &copy; Copyright 2025 | Hotel Booking | All Rights Reserved
         </div>
     </footer>
   );

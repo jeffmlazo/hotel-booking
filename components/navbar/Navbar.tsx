@@ -8,10 +8,10 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
         <Link href="/">
           <Image
-            src="/images/logo-dark.png"
+            src="/images/hotel-booking-logo-dark.png"
             width={128}
             height={49}
-            alt="logo"
+            alt="Logo Dark"
             priority
           />
         </Link>
