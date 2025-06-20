@@ -22,14 +22,26 @@ const PaymentButton = ({
             try {
                 const response = await fetch("/api/payment", {
                     method: "POST",
-                    body: JSON.stringify(reservation)
+                    body: JSON.stringify(reservation),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                 });
-                const {token} = await response.json();
-                if(token) {
-                    window.snap.pay(token);
+
+                const {token, error } = await response.json();
+
+                 if (error) {
+                    console.error(error);
+                    return;
                 }
+                if (token) {
+                    window.snap.pay(token);
+                } else {
+                    console.error("Token not found in response");
+                }
+
             } catch (error) {
-                console.log(error);
+                console.error("Error making payment:", error);
             }
         });
     };

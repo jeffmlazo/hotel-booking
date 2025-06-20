@@ -30,7 +30,6 @@ const CheckoutDetail = async({reservationId}: {reservationId: string}) => {
                         </div>
                     </div>
                 </div>
-                {/* Payment button */}
                 <PaymentButton reservation={reservation} />
             </div>
             <div className="border border-gray-200 px-3 py-5 bg-white rounded-sm">
